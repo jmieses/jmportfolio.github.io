@@ -132,7 +132,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "LinkedIn"
-      icon: "fa fa-linkedin-square"
+      icon: "fa fa-linkedin"
       url: "https://linkedin.com/in/johnnymieses"
 # Site Footer
 footer:
