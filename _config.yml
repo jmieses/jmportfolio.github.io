@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "Johnny Mieses"
-  avatar           : "/assets/images/biophoto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "https://via.placeholder.com/150" #"/assets/images/biophoto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Portfolio."
   location         : "Rochester Hills, Michigan"
   email            :
