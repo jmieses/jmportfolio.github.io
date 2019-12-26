@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
- image: "images/rio_de_janeiro.jpg"
+ image: "assets/images/detroitchristmas2.jpg"
 ---
 
 I'm a software engineer working on the automotive industry building systems for hybrid and electric vehicles.  
