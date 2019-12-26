@@ -1,6 +1,7 @@
 ---
 title: "About"
 permalink: /about/
+author_profile: true
 header:
  image: "assets/images/detroitchristmas2.jpg"
 ---
