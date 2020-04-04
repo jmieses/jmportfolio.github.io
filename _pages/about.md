@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
- image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash2.png"
+ image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash3.png"
 ---
 
 
