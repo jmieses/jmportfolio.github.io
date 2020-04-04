@@ -4,7 +4,7 @@ permalink: /software/
 title: "Software Posts by Tags"
 author_profile: true
 header:
- image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash4.png"
+ image: "rock-n-roll-monkey-R4WCbazrD1g-unsplash2.png"
 ---
 
 Let's test this page.
