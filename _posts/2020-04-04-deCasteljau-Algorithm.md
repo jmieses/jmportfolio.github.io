@@ -6,19 +6,3 @@ header:
  image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash4.png"
 excerpt: "OpenGL, deCasteljau, Algorithm"
 ---
-
-```c++
-#include <iostream>
-	
-using namespace std:
-
-void doSomething(){
-	//do something...	
-}
-
-int main(){
-	
-	doSomething();
-	return 0;
-}
-```
