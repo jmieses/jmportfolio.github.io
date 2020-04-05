@@ -7,13 +7,7 @@ header:
  image: "images/alexandre-debieve-FO7JIlwjOtU-unsplash3.png"
 ---
 
-{% include base_path %}
-{% include group-by-array collection=site.posts field="tags" %}
+{% for post in site.posts %} {% include archive-single.html %} {% endfor %}
+{% capture written_label %}'None'{% endcapture %}
 
-{% for tag in group_names %}
-  {% assign posts = group_items[forloop.index0] %}
-  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
-  {% for post in posts %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endfor %}
+{% for collection in site.collections %} {% unless collection.output == false or collection.label == "posts" %} {% capture label %}{{ collection.label }}{% endcapture %} {% if label != written_label %}
