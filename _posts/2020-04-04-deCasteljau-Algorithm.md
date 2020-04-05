@@ -7,7 +7,7 @@ header:
 excerpt: "OpenGL, deCasteljau, Algorithm"
 ---
 
-'''c++
+```c++
 #include <iostream>
 	
 using namespace std:
@@ -21,4 +21,4 @@ int main(){
 	doSomething();
 	return 0;
 }
-'''
+```
