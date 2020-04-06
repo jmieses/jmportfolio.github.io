@@ -9,3 +9,7 @@ excerpt: "OpenGL, deCasteljau, Algorithm"
 ---
 
 Testing for the post.
+
+Test the math:
+
+$$x+y=0$$
