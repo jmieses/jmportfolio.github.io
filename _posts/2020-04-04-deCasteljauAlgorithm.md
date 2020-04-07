@@ -20,8 +20,8 @@ $$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1 $
 
 
 
-The $\textbf{P}_i$ are called the control points, these are the geometric coefficients of the Bezier curve.
-The $B_{i,n}(u)$ are basis functions, therefore the curve 
+The \(\textbf{P}_i\) are called the control points, these are the geometric coefficients of the Bezier curve.
+The \(B_{i,n}(u)\) are basis functions, therefore the curve 
 
 
 
