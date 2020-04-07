@@ -52,10 +52,12 @@ B_{0,1}(u) = (1-u)B_{2,1}(u) + uB_{1,1}(u) = 1 - u
 $$
 
 then, 
+
 $$
 \textbf{C(u)} = B_{0,2}P_0 + B_{1,2}P_1 + B_{2,2}P_2
 = (1-u)^2P_0 + 2u(1-u)P_1 + u^2P_2
 $$
+
 which is the same result as before. The implementation of the deCastelajau algorithm is straightforward.
 
 
