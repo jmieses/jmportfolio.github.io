@@ -9,18 +9,17 @@ excerpt: "OpenGL, deCasteljau, Algorithm"
 
 ---
 
-# Introduction
+## Introduction
 
 
 The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. A Bezier curve is a parametric polynomial curve that uses polynomials for its coordinates functions [1]. Consequently, an nth-degree Bezier curve is defined by
 
 
-\begin{equation} 
-\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1
-\end{equation}
+$$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1 $$
 
 
-The $\textbf{P}_{i}$ are called the control points, these are the geometric coefficients of the Bezier curve. The $B_{i,n}(u)$ are basis functions, therefore the curve $\textbf{C(u)}$ can be expressed as a linear combination of the control points, and these basis functions.
+
+The $\textbf{P}_i$ are called the control points, these are the geometric coefficients of the Bezier curve. The $B_{i,n}(u)$ are basis functions, therefore the curve $\textbf{C(u)}$ can be expressed as a linear combination of the control points, and these basis functions.
 
 The $B_{i,n}$ are called Bernstein polynomials, and they are defined as
 \begin{equation}
