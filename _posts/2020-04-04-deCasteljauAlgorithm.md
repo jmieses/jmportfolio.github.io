@@ -6,7 +6,7 @@ tags: [opengl, algorithm, c++]
 header:
  image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash4.png"
 excerpt: "OpenGL, deCasteljau, Algorithm"
-mathjax: true
+
 ---
 
 Testing for the post.
