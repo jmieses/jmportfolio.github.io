@@ -2,7 +2,6 @@
 layout: posts
 title: "deCasteljau Algorithm"
 date: 2020-04-04
-tags: [opengl, algorithm, c++]
 excerpt: "OpenGL, deCasteljau, Algorithm"
 mathjax: true	
 ---
