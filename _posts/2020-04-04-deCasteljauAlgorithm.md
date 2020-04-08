@@ -7,7 +7,8 @@ header:
  image: "images/kelly-sikkema-cXkrqY2wFyc-unsplash4.png"
 excerpt: "OpenGL, deCasteljau, Algorithm"
 mathjax: true
-
+toc: true
+toc_sticky: true
 ---
 
 ## Introduction
