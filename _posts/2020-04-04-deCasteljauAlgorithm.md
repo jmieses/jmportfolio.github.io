@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: "deCasteljau Algorithm"
 date: 2020-04-04
 excerpt: "OpenGL, deCasteljau, Algorithm"
