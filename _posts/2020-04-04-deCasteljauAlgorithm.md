@@ -1,11 +1,13 @@
 ---
 title: "deCasteljau Algorithm"
 date: 2020-04-04
+toc: true
+toc_sticky: true
 excerpt: "OpenGL, deCasteljau, Algorithm"
 mathjax: true	
 ---
 
-{% include toc %}
+
 
 
 ## Introduction
