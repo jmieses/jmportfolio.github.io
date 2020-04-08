@@ -2,6 +2,7 @@
 layout: posts
 title: "deCasteljau Algorithm"
 toc: true
+toc_sticky: true
 date: 2020-04-04
 tags: [opengl, algorithm, c++]
 excerpt: "OpenGL, deCasteljau, Algorithm"
