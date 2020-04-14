@@ -71,13 +71,13 @@ which is the same result as before. The implementation of the deCastelajau algor
 
 ## Implementation
 
-#### OpenGL Setup
+### OpenGL Setup
 
 To create a window I used [GLFW](https://www.glfw.org "GLFW's Homepage") library. As a baseline, I used this [example](https://www.glfw.org/documentation.html) in the site. It provides a code snippet to create a window, which is enough to test and display our Bezier curve.
 
 Consequently, for the drawing I used the legacy OpenGL with glBegin(). For the purpose of this quick test/drawing it would be just fine.
 
-#### deCasteljau Algorithm
+### deCasteljau Algorithm
 
 We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with can a vector of points, which can then be used for the algorithm. 
 
