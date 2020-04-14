@@ -12,7 +12,9 @@ mathjax: true
 ## Introduction
 
 
-The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. A Bezier curve is a parametric polynomial curve that uses polynomials for its coordinates functions [1]. Consequently, an nth-degree Bezier curve is defined by
+The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. By recursively iterating over the control points, we can obtain the Bezier in a very efficient manner, and without the use of factorials for the generation of the basis functions of the curve.
+
+A Bezier curve is a parametric polynomial curve that uses polynomials for its coordinates functions [1]. Consequently, an nth-degree Bezier curve is defined by
 
 
 $$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1 $$
@@ -67,8 +69,11 @@ $$
 which is the same result as before. The implementation of the deCastelajau algorithm is straightforward.
 
 
-#### Implementation
+## Implementation
 
+#### OpenGL Setup
 
-The Bezier curve is implemented using the Decasteljau algorithm, and using OpenGL for rendering. The controls points are obtained from the user clicks on the OpenGL display. 
+To create a window I used [GLFW](https://www.glfw.org "GLFW's Homepage") library site. As a baseline, I used this [example](https://www.glfw.org/documentation.html) in the site. It provides a code snippet to create a window, which is enough to test and display our Bezier curve. 
+
+The Bezier curve is implemented using the Decasteljau algorithm, and using OpenGL for rendering. We will be using a vector to implement the control points.
 A Point object and a Curve struct serve to process the points. In addition, two global pointer to Curve object *C and *Q are created. The actual control points stored in *C and copied into *Q, so the curve doesn't deformed by erasing control points. 
