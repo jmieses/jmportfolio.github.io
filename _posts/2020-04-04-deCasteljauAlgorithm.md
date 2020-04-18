@@ -79,12 +79,51 @@ Consequently, for the drawing I used the legacy OpenGL with glBegin(). For the p
 
 ### deCasteljau Algorithm
 
-We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with can a vector of points, which can then be used for the algorithm. 
+We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with can a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds collection of 2D points. In addition, for our we create a vector of control points 
 
 ```c++
 typedef struct Point {
     double x, y;
 };
+
+typedef struct Curve {
+    std::vector<Point> C;
+    Curve(size_t size) {
+        C.resize(size);
+    }
+};
+
+std::vector<Point> control_points =
+{
+    { 0.0f / 10.0f, -1.1f / 10.0f},
+    { -2.0f / 10.0f, 8.3f / 10.0f},
+    { 0.5f / 10.0f, 6.5f / 10.0f},
+    { 5.1f / 10.0f, 4.7f / 10.0f},
+    { 3.3f / 10.0f, 3.1f / 10.0f},
+    { 1.4f / 10.0f, 7.5f / 10.0f},
+    { 2.1f / 10.0f, 0.0f / 10.0f},
+};
+
+Curve curve(control_points.size());
 ```
 
-A Point object and a Curve struct serve to process the points. In addition, two global pointer to Curve object *C and *Q are created. The actual control points stored in *C and copied into *Q, so the curve doesn't deformed by erasing control points. 
+```c++
+void deCasteljau(double u) {
+
+    std::vector<Point> temp_control_points;
+    temp_control_points = control_points;
+    auto temp_size = temp_control_points.size() - 1;
+    
+    for (int i = 1; i < temp_size; i++) {
+        for (int j = 0; j < temp_size - i; j++) {
+            int res = temp_size - i;
+            temp_control_points[j].x = (1.0 - u) * temp_control_points[j].x + u * temp_control_points[j + 1].x;
+            temp_control_points[j].y = (1.0 - u) * temp_control_points[j].y + u * temp_control_points[j + 1].y;
+        }
+    }
+    
+    curve.C[0].x = temp_control_points[0].x;
+    curve.C[0].y = temp_control_points[0].y;
+
+}
+```
