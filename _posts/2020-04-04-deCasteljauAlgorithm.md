@@ -79,7 +79,7 @@ Consequently, for the drawing I used the legacy OpenGL with glBegin(). For the p
 
 ### deCasteljau Algorithm
 
-We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with can a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds collection of 2D points. In addition, for our we create a vector of control points 
+We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with two coordinates we can create a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds collection of 2D points. In addition, for our we create a vector of control points 
 
 ```c++
 typedef struct Point {
