@@ -42,6 +42,7 @@ Bernstein polynomials gives a formulation for building Bezier curves of any degr
 
 Let's see the case for $n = 2$, the Bernstein basis functions takes the following form
 $$B_{0,2} = (1-u)^2 \quad B_{1,2} = 2u(1-u) \quad B_{2,2}=u^2$$
+
 Then the curve formed by control points $\textbf{P}_i$ is
 
 $$
@@ -79,7 +80,7 @@ Consequently, for the drawing I used the legacy OpenGL with glBegin(). For the p
 
 ### deCasteljau Algorithm
 
-We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with two coordinates we can create a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds collection of 2D points. In addition, for our we create a vector of control points 
+We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with two coordinates we can create a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds a collection of 2D points for the control points. In addition, we will use the same data structure to copy the control points in a temporary vector of points, which will produce the points for the Bezier curve. 
 
 ```c++
 typedef struct Point {
@@ -120,10 +121,12 @@ void deCasteljau(double u) {
             temp_control_points[j].x = (1.0 - u) * temp_control_points[j].x + u * temp_control_points[j + 1].x;
             temp_control_points[j].y = (1.0 - u) * temp_control_points[j].y + u * temp_control_points[j + 1].y;
         }
-    }
-    
+    }  
     curve.C[0].x = temp_control_points[0].x;
     curve.C[0].y = temp_control_points[0].y;
-
 }
 ```
+
+
+## References
+[[1]https://en.wikipedia.org/wiki/B%C3%A9zier_curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
