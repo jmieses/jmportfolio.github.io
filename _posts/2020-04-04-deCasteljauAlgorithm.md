@@ -3,7 +3,8 @@ title: "deCasteljau Algorithm"
 date: 2020-04-04
 toc: true
 excerpt: "OpenGL, deCasteljau, Algorithm"
-mathjax: true	
+mathjax: true
+classes: wide	
 ---
 
 
