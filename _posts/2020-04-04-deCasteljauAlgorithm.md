@@ -117,7 +117,6 @@ void deCasteljau(double u) {
     
     for (int i = 1; i < temp_size; i++) {
         for (int j = 0; j < temp_size - i; j++) {
-            int res = temp_size - i;
             temp_control_points[j].x = (1.0 - u) * temp_control_points[j].x + u * temp_control_points[j + 1].x;
             temp_control_points[j].y = (1.0 - u) * temp_control_points[j].y + u * temp_control_points[j + 1].y;
         }
