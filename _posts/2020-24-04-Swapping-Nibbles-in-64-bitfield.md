@@ -11,7 +11,7 @@ classes: wide
 ## The Bitfield Problem
 
 
-A bitfield defined in big endian platform can present a problem in a little endian based platform. Indeed, for big endian the Most Significant Bit (MSB) would be a the top of the bitfield, while for little endian the Least Significant Bit (LSB) would be at the top. A quick and dirty solution would be to start using a swapping function where needed to change endianess accordingly. Of course, it would be advisiblie to change the bitfield itself to the prefer endianess, but for the sake of explanation let's suppose it is not possible.  
+A bitfield defined in big endian platform can present a problem in a little endian based platform. Indeed, for big endian the Most Significant Bit (MSB) would be a the top of the bitfield, while it would be the Least Significant Bit (LSB) for little endian. A quick and dirty solution would be to start using a swapping function where needed to change endianess accordingly. Of course, it would be advisible to change the bitfield itself to the prefer endianess, but for the sake of explanation let's suppose it is not possible.  
 
 
 
