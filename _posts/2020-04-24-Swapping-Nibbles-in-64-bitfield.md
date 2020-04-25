@@ -1,6 +1,6 @@
 ---
 title: "Swapping Nibbles in a 64-bit Bitfield"
-date: 2020-24-04
+date: 2020-04-24
 toc: true
 excerpt: "Embedded, Endianess"
 mathjax: true
