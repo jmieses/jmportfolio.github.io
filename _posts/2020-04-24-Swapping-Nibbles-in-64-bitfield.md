@@ -28,9 +28,10 @@ Consequently, we can move each half to it's expected place. This is achieve usin
 
 $$ \hspace{7em} \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
 \hspace{7em} \texttt{(0123456700000000 >> 32) = 0000000001234567}$$
+
 Then, it is just a matter of using the OR operator to get complete the swapped value. 
 
-$$\frac{\qquad \texttt{0000000089ABCDEF} \\ \& \quad \texttt{0123456700000000}}{\qquad \texttt{0123456789ABCDEF}} $$
+$$\frac{\qquad \texttt{0000000089ABCDEF} \\ \| \quad \texttt{0123456700000000}}{\qquad \texttt{0123456789ABCDEF}} $$
 
 ```c
 uint64 Swap_Nibbles_64Bit(uint64 val) {
