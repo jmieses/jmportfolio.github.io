@@ -33,7 +33,7 @@ Then, it is just a matter of using the OR operator to get complete the swapped v
 
 $$\frac{\quad \texttt{0000000089ABCDEF} \\ | \quad \texttt{0123456700000000}}{\quad \texttt{0123456789ABCDEF}} $$
 
-Finally, repeat this recipe for the next 2 bytes, 1 byte, and the nibbles. That will change the order sequence of the byte list based on the nibbles.
+Finally, repeat this recipe for the next 2 bytes, 1 byte, and the nibbles. That will reverse the order sequence of the byte list based on the nibbles.
 
 ```c
 typedef unsigned long long uint64
