@@ -21,7 +21,8 @@ In addition, let's suppose that we need to keep the nibbles in a specific ordere
 
 By taking the value and dividing it in half, we can move the front to the back half, and the back half to the front half. We achieve this by first clearing the halfs that we want 
 
-$$ \frac{\texttt{0123456789ABCDEF} \\ \&  \texttt{00000000FFFFFFFF}}{ \texttt{0000000089ABCDEF}}  $$
+$$ \frac{\texttt{0123456789ABCDEF} \\ \&  \texttt{00000000FFFFFFFF}}{ \texttt{0000000089ABCDEF}} \hspace{1em} 
+\frac{\texttt{0123456789ABCDEF} \\ \&  \texttt{00000000FFFFFFFF}}{ \texttt{0000000089ABCDEF}} $$
 
 ```c
 uint64 Swap_Nibbles_64Bit(uint64 val) {
