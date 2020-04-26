@@ -26,8 +26,8 @@ $$ \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{00000000FFFFFFFF}}
 
 Consequently, we can move each half to it's expected place. This is achieve using the right and left shift operator moving the bit sequence by 32 bits in each direction.
 
-$$ \hspace{5em} \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
-\hspace{5em} \texttt{(0123456700000000 >> 32) = 0000000001234567}$$
+$$ \hspace{3em} \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
+\hspace{3em} \texttt{(0123456700000000 >> 32) = 0000000001234567}$$
 
 Then, it is just a matter of using the OR operator to get complete the swapped value. 
 
