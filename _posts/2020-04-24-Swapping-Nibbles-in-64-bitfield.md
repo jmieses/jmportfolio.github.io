@@ -33,12 +33,18 @@ Then, it is just a matter of using the OR operator to get complete the swapped v
 
 $$\frac{\quad \texttt{0000000089ABCDEF} \\ | \quad \texttt{0123456700000000}}{\quad \texttt{0123456789ABCDEF}} $$
 
+Finally, repeat this recipe for the next 2 bytes, 1 byte, and the nibbles. That will change the order sequence of the byte list based on the nibbles.
+
 ```c
+typedef unsigned long long uint64
+
 uint64 Swap_Nibbles_64Bit(uint64 val) {
-    val = (val & 0x00000000FFFFFFFF) << 32 | (val & 0xFFFFFFFF00000000) >> 32;
+    val = (val & 0x00000000FFFFFFFF) << 32 | (val & 0xFFFFFFFF00000000) >> 32; // remove line for 32-bit swap
     val = (val & 0x0000FFFF0000FFFF) << 16 | (val & 0xFFFF0000FFFF0000) >> 16;
     val = (val & 0x00FF00FF00FF00FF) << 8  | (val & 0xFF00FF00FF00FF00) >> 8;
-    val = (val & 0x0F0F0F0F0F0F0F0F) << 4  | (val & 0xF0F0F0F0F0F0F0F0) >> 4;
+    val = (val & 0x0F0F0F0F0F0F0F0F) << 4  | (val & 0xF0F0F0F0F0F0F0F0) >> 4;	// remove line for byte swap
     return val;
 }
 ```
+
+A nice thing about this function, is that by removing the last or the first line, we can make a 32-bit swap and a byte swapp respectively.
