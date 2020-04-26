@@ -26,8 +26,8 @@ $$ \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{00000000FFFFFFFF}}
 
 Consequently, we shift the right and left each of the 8 byte halfs. 
 
-$$\hspace{3em} \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
-\hspace{3em} \texttt{(0123456700000000 << 32) = 0000000001234567}$$
+$$ \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
+\texttt{(0123456700000000 << 32) = 0000000001234567}$$
 Then, it is just a matter of using the OR operator to get complete the swapped value. 
 
 $$\frac{\qquad \texttt{0000000089ABCDEF} \\ \& \quad \texttt{0123456700000000}}{\qquad \texttt{0123456789ABCDEF}} $$
