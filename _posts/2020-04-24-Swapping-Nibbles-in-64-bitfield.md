@@ -24,6 +24,10 @@ By taking the value and dividing it in half, we can move the front to the back h
 $$ \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{00000000FFFFFFFF}}{\qquad \texttt{0000000089ABCDEF}} \hspace{3em} 
 \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{FFFFFFFF00000000}}{\qquad \texttt{0123456700000000}} $$
 
+Then, it is just a matter of using the OR operator to get complete swapped value. 
+
+$$\frac{\qquad \texttt{0000000089ABCDEF} \\ \& \quad \texttt{0123456700000000}}{\qquad \texttt{0123456789ABCDEF}} $$
+
 ```c
 uint64 Swap_Nibbles_64Bit(uint64 val) {
     val = (val & 0x00000000FFFFFFFF) << 32 | (val & 0xFFFFFFFF00000000) >> 32;
