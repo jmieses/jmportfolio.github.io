@@ -16,7 +16,7 @@ A bitfield defined in big endian platform can present a problem in a little endi
 In addition, let's suppose that we need to keep the nibbles in a specific ordered sequence. In other words, the order of the nibble sequence determines the validity of the information. This case would be true for an API expecting a sequence of flags from a bitfield in which each flag is one bit. The flags are expected in specific order, where the MSB comes first.    
 
 
-## How it works
+## How it Works
 
 
 By taking the value and dividing it in half, we can move the front to the back half, and the back half to the front half. We achieve this by first clearing the halfs that we want 
