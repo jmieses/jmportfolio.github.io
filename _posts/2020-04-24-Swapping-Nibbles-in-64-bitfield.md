@@ -24,7 +24,7 @@ By taking the value and dividing it in half, we can move the front to the back h
 $$ \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{00000000FFFFFFFF}}{\qquad \texttt{0000000089ABCDEF}} \hspace{3em} 
 \frac{\qquad \texttt{0123456789ABCDEF} \\ \& \quad \texttt{FFFFFFFF00000000}}{\qquad \texttt{0123456700000000}} $$
 
-Consequently, we shift the right and left each of the 8 byte halfs. 
+Consequently, we can move each half to it's expected place. This is achieve using the right and left shift operator moving the bit sequence by 32 bits.
 
 $$ \hspace{7em} \texttt{(0000000089ABCDEF << 32) = 89ABCDEF00000000} \\
 \hspace{7em} \texttt{(0123456700000000 >> 32) = 0000000001234567}$$
