@@ -15,6 +15,11 @@ A bitfield defined in big endian platform can present a problem in a little endi
 
 In addition, let's suppose that we need to keep the nibbles in a specific ordered sequence. In other words, the order of the nibble sequence determines the validity of the information. This case would be true for an API expecting a sequence of flags in specific order, where the MSB comes first.    
 
+
+## How it works
+
+
+
 $$ \texttt{0x0A0B0C0E0D0F0F0D0} \quad \& \quad \texttt{0x00000000FFFFFFFF}  $$
 
 ```c
