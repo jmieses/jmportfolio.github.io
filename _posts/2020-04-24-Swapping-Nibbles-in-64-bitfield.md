@@ -19,8 +19,9 @@ In addition, let's suppose that we need to keep the nibbles in a specific ordere
 ## How it works
 
 
-
-$$ \texttt{0x0A0B0C0E0D0F0F0D0} \quad \& \quad \texttt{0x00000000FFFFFFFF}  $$
+By taking the value and dividing it in half, we can move the front to the back half, and the back half to the front half. We achieve this by first clearing the halfs that we want 
+ 
+$$ \texttt{val} \quad \& \quad \texttt{0x00000000FFFFFFFF}  $$
 
 ```c
 uint64 Swap_Nibbles_64Bit(uint64 val) {
