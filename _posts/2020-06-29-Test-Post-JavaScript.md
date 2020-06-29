@@ -10,7 +10,8 @@ classes: wide
 Testing Post for JavaScript
 
 
-<svg width="100" height="100">
-   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-   Sorry, your browser does not support inline SVG.
-</svg> 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 1 1" style="display:block; width:70%; height:20em; margin:0em auto; border:0.07em solid #808080">
+	<path d="" fill="#E8E8E8" stroke-width="0.006" stroke="#808080"/>
+	<g fill="#909090"></g>
+	<g fill="#FF0000"></g>
+</svg>
