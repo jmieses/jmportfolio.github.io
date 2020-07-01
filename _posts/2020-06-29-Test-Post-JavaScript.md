@@ -18,13 +18,13 @@ Testing Post for JavaScript
 
 
 <script type="text/javascript">
-	var svg = document.getElementById("window");	
-
+	var svg_element = document.getElementById("window");	
+	var path_element = svg_element.getElementById("path");
 		// create the circle node, set attributes, and append it to the SVG node
 	const circleNode = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 	circleNode.setAttributeNS(null, 'cx', '50');
 	circleNode.setAttributeNS(null, 'cy', '50');
 	circleNode.setAttributeNS(null, 'r', '40');
 	circleNode.setAttributeNS(null, 'fill', 'blue');
-	svgNode.appendChild(circleNode);
+	path_element.setAttribute("d", circleNode);
 </script>
