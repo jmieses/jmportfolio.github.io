@@ -16,6 +16,7 @@ Testing Post for JavaScript
 	<g fill="#FF0000"></g>
 </svg>
 
+
 <script type="text/javascript">
 	var svg = document.getElementById("window");	
 
