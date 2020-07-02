@@ -10,14 +10,7 @@ classes: wide
 Testing Post for JavaScript
 
 
-<style>
-svg {
-		border: solid 1px #00f;
-		width: 700px;
-		height: 550px;
-	}
-</style>
-<svg id="mysvg"></svg>
+<svg id="mysvg" style="border: solid 1px #00f; width: 700px; height: 550px"></svg>
 <script>
 var svg = document.querySelector('#mysvg');
 
