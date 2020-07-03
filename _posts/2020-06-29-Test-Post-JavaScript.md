@@ -25,6 +25,15 @@ var ycenter = svgh/2;
 
 var rayCount = 20;
 
+function randn_bm() {
+    let u = 0, v = 0;
+    while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+    while(v === 0) v = Math.random();
+    let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+    //num = num / 10.0 + 0.5; // Translate to 0 -> 1
+    if (num > 1 || num < 0) return randn_bm(); // resample between 0 and 1
+    return num;
+}
 
 //http://stackoverflow.com/a/3642265/1869660
 function makeSVGElement(tag, attrs) {
@@ -35,21 +44,26 @@ function makeSVGElement(tag, attrs) {
     return el;
 }
 
-var circle = makeSVGElement('circle', { cx: xcenter,
-                                        cy: ycenter,
-                                        r: 10,
+function rnPoints(){
+	while(svg.firstChild != null)
+    	svg.removeChild(svg.firstChild);
+	for(var i = 0; i < 5; i++){
+		var circle = makeSVGElement('circle', { cx: svgw * randn_bm(),
+                                        cy: svgh * randn_bm(),
+                                        r: 5,
                                         stroke: 'red',
                                        'stroke-width': 2,
-                                        fill: 'orange' });
-svg.appendChild(circle);
-
-var rayAngle = 360/rayCount;
-for(var i=0; i<rayCount; i++) {
-    var path = makeSVGElement('path', { d: 'M' + [xcenter, ycenter] + ' h250',
-                                        stroke: 'orange',
-                                       'stroke-width': 1,
-                                        transform: 'rotate(' + [(rayAngle*i), xcenter, ycenter] + ')' });
-    svg.appendChild(path);
+                                        fill: 'orange' });	
+		svg.appendChild(circle);
+	}
+    if(count < 20){	
+    count = count + 1;
+	}else{
+	clearInterval(setIntervalID);
+	}
 }
+
+var count = 1;
+var setIntervalID = setInterval(rnPoints, 2000);
 
 </script>
