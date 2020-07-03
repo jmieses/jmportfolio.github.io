@@ -22,7 +22,7 @@ var svgh = svgRect.height;
 //center point of svg
 var xcenter = svgw/2;
 var ycenter = svgh/2;
-
+var ctrlPts = [];
 var rayCount = 20;
 
 function randn_bm() {
@@ -48,22 +48,49 @@ function rnPoints(){
 	while(svg.firstChild != null)
     	svg.removeChild(svg.firstChild);
 	for(var i = 0; i < 5; i++){
-		var circle = makeSVGElement('circle', { cx: svgw * randn_bm(),
-                                        cy: svgh * randn_bm(),
+    	var svgx = svgw * randn_bm();
+        var svgy = svgh * randn_bm();
+        ctrlPts.push({x : svgx, y : svgy});
+		var circle = makeSVGElement('circle', { cx: ctrlPts[i].x,
+                                        cy: ctrlPts[i].y,
                                         r: 5,
                                         stroke: 'red',
                                        'stroke-width': 2,
                                         fill: 'orange' });	
 		svg.appendChild(circle);
 	}
+    
     if(count < 20){	
-    count = count + 1;
+    	count = count + 1;
 	}else{
-	clearInterval(setIntervalID);
+		clearInterval(setIntervalID);
 	}
 }
 
 var count = 1;
-var setIntervalID = setInterval(rnPoints, 2000);
+var setIntervalID = setInterval(deCasteljau, 5000);
+
+function deCasteljau(){
+	rnPoints();
+ 	var cpyCtrlPts = ctrlPts;
+    var n = cpyCtrlPts.length;
+    for(var u = 0.0; u <= 1.0; u += 0.01){ 
+        for(var i = 1; i < n; i++){
+            for(var j = 0; j < n - i; j++){
+                cpyCtrlPts[j].x = (1.0-u) * cpyCtrlPts[j].x + u * cpyCtrlPts[j + 1].x
+                cpyCtrlPts[j].y = (1.0-u) * cpyCtrlPts[j].y + u * cpyCtrlPts[j + 1].y
+            }
+        }
+       var circle = makeSVGElement('circle', { cx: cpyCtrlPts[0].x,
+                                        cy: cpyCtrlPts[0].y,
+                                        r: 1,
+                                        stroke: 'black',
+                                       'stroke-width': 2,
+                                        fill: 'orange' });	
+	   svg.appendChild(circle);
+    }
+    ctrlPts = [];
+
+}
 
 </script>
