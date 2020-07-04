@@ -59,12 +59,13 @@ function rnPoints(){
                                         fill: 'orange' });	
 		svg.appendChild(circle);
 	}
-    
-    if(count < 20){	
-    	count = count + 1;
-	}else{
-		clearInterval(setIntervalID);
-	}
+   
+ // stop random point generation   
+ //    if(count < 20){	
+ //    	count = count + 1;
+	// }else{
+	// 	clearInterval(setIntervalID);
+	// }
 }
 
 var count = 1;
