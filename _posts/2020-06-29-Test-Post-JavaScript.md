@@ -94,4 +94,8 @@ function deCasteljau(){
 
 }
 
+// I really enjoy working with curves since they give a lot of room for playing around 
+// from a programming and mathematical perspective. The curve can be controlled by playing
+// around with several variables which give a higher level of understanding on how this
+// structure works.
 </script>
