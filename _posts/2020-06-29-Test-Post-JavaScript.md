@@ -11,9 +11,11 @@ Testing Post for JavaScript
 
 
 <svg id="mysvg" style="display:block; width:70%; height:20em; margin:0em auto; border:0.07em solid #808080"></svg>
+<label for="degree">Degree:</label>
+<input type="number" id="degree" name="degree" step="1" value="5" min="3">
 <script>
 var svg = document.querySelector('#mysvg');
-
+var degree = document.getElementById("degree").value;
 //dimension of svg
 var svgRect = svg.getBoundingClientRect();
 var svgw = svgRect.width;
@@ -47,7 +49,8 @@ function makeSVGElement(tag, attrs) {
 function rnPoints(){
 	while(svg.firstChild != null)
     	svg.removeChild(svg.firstChild);
-	for(var i = 0; i < 5; i++){
+    degree = document.getElementById("degree").value;
+	for(var i = 0; i < degree; i++){
     	var svgx = svgw * randn_bm();
         var svgy = svgh * randn_bm();
         ctrlPts.push({x : svgx, y : svgy});
