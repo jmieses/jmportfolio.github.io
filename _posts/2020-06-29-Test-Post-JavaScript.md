@@ -13,6 +13,8 @@ Testing Post for JavaScript
 <svg id="mysvg" style="display:block; width:70%; height:20em; margin:0em auto; border:0.07em solid #808080"></svg>
 <label for="degree">Degree:</label>
 <input type="number" id="degree" name="degree" step="1" value="5" min="3">
+
+
 <script>
 var svg = document.querySelector('#mysvg');
 var degree = document.getElementById("degree").value;
