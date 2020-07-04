@@ -75,7 +75,7 @@ function deCasteljau(){
 	rnPoints();
  	var cpyCtrlPts = ctrlPts;
     var n = cpyCtrlPts.length;
-    for(var u = 0.0; u <= 1.0; u += 0.01){ 
+    for(var u = 0.0; u <= 1.0; u += 0.001){ 
         for(var i = 1; i < n; i++){
             for(var j = 0; j < n - i; j++){
                 cpyCtrlPts[j].x = (1.0-u) * cpyCtrlPts[j].x + u * cpyCtrlPts[j + 1].x
