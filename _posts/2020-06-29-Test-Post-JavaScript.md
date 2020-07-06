@@ -18,6 +18,7 @@ Testing Post for JavaScript
 <script>
 var svg = document.querySelector('#mysvg');
 var degree = document.getElementById("degree").value;
+
 //dimension of svg
 var svgRect = svg.getBoundingClientRect();
 var svgw = svgRect.width;
