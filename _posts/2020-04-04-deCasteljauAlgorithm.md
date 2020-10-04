@@ -108,7 +108,7 @@ function deCasteljau(){
 ## Introduction
 
 
-The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. By recursively iterating over the control points, we can obtain the Bezier in a very efficient manner, and without the use of factorials for the generation of the basis functions of the curve.
+The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. By recursively iterating over the control points, we can obtain the Bezier curve in a very efficient manner by avoiding the use of factorials for the generation of the basis functions of the curve.
 
 A Bezier curve is a parametric polynomial curve that uses polynomials for its coordinates functions [1]. Consequently, an nth-degree Bezier curve is defined by
 
@@ -207,12 +207,10 @@ Curve curve(control_points.size());
 ```c++
 void deCasteljau(double u) {
 
-    std::vector<Point> temp_control_points;
-    temp_control_points = control_points;
-    auto temp_size = temp_control_points.size() - 1;
+    std::vector<Point> temp_control_points(control_points);
     
-    for (int i = 1; i < temp_size; i++) {
-        for (int j = 0; j < temp_size - i; j++) {
+    for (unsigned int i = 1; i < control_points.size(); i++) {
+        for (unsigned int j = 0; j < control_points.size() - i; j++) {
             temp_control_points[j].x = (1.0 - u) * temp_control_points[j].x + u * temp_control_points[j + 1].x;
             temp_control_points[j].y = (1.0 - u) * temp_control_points[j].y + u * temp_control_points[j + 1].y;
         }
