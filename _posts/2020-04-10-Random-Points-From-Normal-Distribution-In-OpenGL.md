@@ -36,3 +36,5 @@ void Normal_Distribution(float * sample) {
     *sample = x / (1 + std::abs(x)); // *sample in range [-1, 1] using sigmoid function
 }
 ```
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
