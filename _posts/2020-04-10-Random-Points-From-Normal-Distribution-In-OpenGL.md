@@ -8,12 +8,12 @@ classes: wide
 ---
 
 
-## The Bitfield Problem
+## Creating a Normal Distribution
 
 
-A bitfield defined in big endian platform can present a problem in a little endian based platform. Indeed, for big endian the Most Significant Bit (MSB) would be a the top of the bitfield, while it would be the Least Significant Bit (LSB) for little endian. A quick and dirty solution would be to start using a swapping function where needed to change endianess accordingly. Of course, it would be advisible to change the bitfield itself to the prefer endianess, like for example [this compiler switch in linux kernel](http://lxr.linux.no/linux+v2.6.38/include/linux/ip.h). But for the sake of explanation let's suppose it is not possible to change the bitfield structure. 
+I will be using a pseudorandom generated set of points that can serve to test multiple algorithms that use points in their processing step. In particular, we can use a normal distribution to generate those points. Specifically, 2D points for our 2D OpenGL baseline. In addition,  I’d prefer that the geometries created from these points fall more or less within the center of our OpenGL window. For this , I will be using a sigmoid function to map the domain $[-\infty, \infty]$ from the normal distribution to the range [-1, 1]. This is the needed range since OpenGL processes our 2D coordinates in the range (-1, 1) and then transforms that to window coordinates in the range (SCREEN_WIDTH, SCREEN_HEIGHT).
 
-In addition, let's suppose that we need to keep the nibbles in a specific ordered sequence. In other words, the order of the nibble sequence determines the validity of the information. This case would be true for an API expecting a sequence of flags from a bitfield in which each flag is one bit. The flags are expected in specific order, where the MSB comes first.    
+We can get a set of pseudorandom points using the template class std::normal_distribution from STL. Starting from an uniform random generator to get a mean and a variance value, which serve as arguments for the std::normal_distribution constructor. After that we simply need to obtain the sample value that is returned from the std::normal_distribution object.   
 
 
 ## How It Works
