@@ -22,7 +22,7 @@ For sigmoid function, we will be using
 
 $$ f(x) = \frac{x}{1+x}$$
 
-this sigmoid function does the mapping $f(x) : (-\infty, \infty) -> (-1, 1)$. This is in contrast to $f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$.
+this sigmoid function does the mapping $f(x) : (-\infty, \infty) \to (-1, 1)$. This is in contrast to $f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$.
 
 ```c++
 void Normal_Distribution(float * sample) {
