@@ -20,7 +20,7 @@ We can get a set of pseudorandom points using the template class std::normal_dis
 
 For sigmoid function, we will be using 
 
-$$ f(x) = \frac{x}{1+x}$$
+$$ f(x) = \frac{x}{1+ \lvert x \rvert}$$
 
 this sigmoid function does the mapping $f(x) : (-\infty, \infty) \to (-1, 1)$. This is in contrast to $f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$.
 
