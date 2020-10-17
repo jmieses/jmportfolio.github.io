@@ -5,8 +5,6 @@ toc: true
 excerpt: "OpenGL, Randomness, Normal Distribution"
 mathjax: true
 classes: wide	
-header:
- image: "images/alexandre-debieve-FO7JIlwjOtU-unsplash3.png"
 ---
 
 
@@ -43,5 +41,9 @@ void Normal_Distribution(float * sample) {
     *sample = x / (1 + std::abs(x)); // *sample in range (-1, 1) using sigmoid function
 }
 ```
+<video width="480" height="320" controls="controls">
+  <source src="videos/myfile.mp4" type="video/mp4">
+</video>
+
 
 ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
