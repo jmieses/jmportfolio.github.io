@@ -42,7 +42,9 @@ void Normal_Distribution(float * sample) {
 }
 ```
 <video width="480" height="320" controls="controls">
-  <source src="rand_shapes.mp4" type="video/mp4">
+  <source src="videos/rand_shapes.mp4" type="video/mp4">
+    <source src="videos/rand_shapes.webm" type="video/webm">
+    <source src="videos/rand_shapes.ogg" type="video/ogg">
 </video>
 
 
