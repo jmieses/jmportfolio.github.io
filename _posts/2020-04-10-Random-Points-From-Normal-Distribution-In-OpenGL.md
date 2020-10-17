@@ -5,6 +5,8 @@ toc: true
 excerpt: "OpenGL, Randomness, Normal Distribution"
 mathjax: true
 classes: wide	
+header:
+ image: "images/alexandre-debieve-FO7JIlwjOtU-unsplash3.png"
 ---
 
 
