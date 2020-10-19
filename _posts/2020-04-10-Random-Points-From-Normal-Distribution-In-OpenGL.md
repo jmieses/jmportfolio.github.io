@@ -5,6 +5,7 @@ toc: true
 excerpt: "OpenGL, Randomness, Normal Distribution"
 mathjax: true
 classes: wide	
+youtubeId: tyNU6R2jDvA
 ---
 
 
@@ -45,4 +46,4 @@ void Normal_Distribution(float * sample) {
     *sample = x / (1 + std::abs(x)); // *sample in range (-1, 1) using sigmoid function
 }
 ```
-[![](http://img.youtube.com/vi/tyNU6R2jDvA/0.jpg)](http://www.youtube.com/watch?v=tyNU6R2jDvA "Random Points")
+{% include youtubePlayer.html id=page.youtubeId %}
