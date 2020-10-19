@@ -46,4 +46,5 @@ void Normal_Distribution(float * sample) {
     *sample = x / (1 + std::abs(x)); // *sample in range (-1, 1) using sigmoid function
 }
 ```
+Find source code in my github repository for the project [opengl_2D_baseline](https://github.com/jmieses/opengl_2D_baseline)
 {% include youtubePlayer.html id=page.youtubeId %}
