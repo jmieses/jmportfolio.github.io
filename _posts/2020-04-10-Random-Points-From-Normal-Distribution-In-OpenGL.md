@@ -18,11 +18,15 @@ We can get a set of pseudorandom points using the template class std::normal_dis
 
 ## Implementation
 
+At first, I decided to use the follwing sigmoid function: 
+
+$$f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$$
+
 For sigmoid function, we will be using 
 
 $$ f(x) = \frac{x}{1+ \lvert x \rvert}$$
 
-this sigmoid function does the mapping $f(x) : (-\infty, \infty) \to (-1, 1)$. This is in contrast to $f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$.
+this sigmoid function does the mapping $f(x) : (-\infty, \infty) \to (-1, 1)$.
 
 ```c++
 void Normal_Distribution(float * sample) {
@@ -41,11 +45,4 @@ void Normal_Distribution(float * sample) {
     *sample = x / (1 + std::abs(x)); // *sample in range (-1, 1) using sigmoid function
 }
 ```
-<video width="480" height="320" controls="controls">
-  <source src="file_example_MP4_480_1_5MG.mp4" type="video/mp4">
-    <source src="file_example_MP4_480_1_5MG.webm" type="video/webm">
-    <source src="file_example_MP4_480_1_5MG.ogg" type="video/ogg">
-</video>
-
-
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+[![](http://img.youtube.com/vi/tyNU6R2jDvA/0.jpg)](http://www.youtube.com/watch?v=tyNU6R2jDvA "Random Points")
