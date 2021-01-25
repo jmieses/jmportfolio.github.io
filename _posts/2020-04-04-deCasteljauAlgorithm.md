@@ -107,17 +107,17 @@ function deCasteljau(){
 
 ## Introduction
 
-
-The deCasteljau algorithm gives a way to construct Bezier curves with a very simple approach. By recursively iterating over the control points, we can obtain the Bezier curve in a very efficient manner by avoiding the use of factorials for the generation of the basis functions of the curve.
+The deCasteljau's algorithm introduces a way to create Bezier curves through the evaluation of Bernstein polynomial. The algorithm recursively iterates over the control points and produces
+a numerical stable Bezier curve.
 
 A Bezier curve is a parametric polynomial curve that uses polynomials for its coordinates functions [1]. Consequently, an nth-degree Bezier curve is defined by
 
 
-$$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1 $$
+$$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1. $$
 
 
 
-<p>The $\textbf{P}_i$ are called the control points, these are the geometric coefficients of the Bezier curve.
+<p>The $\textbf{P}_i$ are called the control points, and they are the geometric coefficients of the Bezier curve.
 The $B_{i,n}(u)$ are basis functions, therefore the curve $\textbf{C(u)}$ can be expressed as a linear combination of the control points, and these basis functions.
 </p>
 
