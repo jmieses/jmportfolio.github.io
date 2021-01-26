@@ -134,7 +134,7 @@ Bernstein polynomials gives a formulation for building Bezier curves of any degr
 Let's see the case for $n = 2$, the Bernstein basis functions takes the following form
 $$B_{0,2} = (1-u)^2 \quad B_{1,2} = 2u(1-u) \quad B_{2,2}=u^2$$
 
-Then the curve formed by control points $\textbf{P}_i$ is
+Then the curve formed by control points $\{ \textbf{P}_0, \textbf{P}_1, \textbf{P}_2 \}$ is
 
 $$
 \textbf{C(u)} = B_{0,2}P_0 + B_{1,2}P_1 + B_{2,2}P_2 
