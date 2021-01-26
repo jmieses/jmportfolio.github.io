@@ -113,12 +113,14 @@ The deCasteljau's algorithm introduces a way to create Bezier curves through the
 $$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1. $$
 
 
-The deCasteljau's algorithm recursively iterates over the control points to produces a numerical stable Bezier curve.
-
-
 <p>The $\textbf{P}_i$ are called the control points, and they are the geometric coefficients of the Bezier curve.
 The $B_{i,n}(u)$ are basis functions, therefore the curve $\textbf{C(u)}$ can be expressed as a linear combination of the control points, and these basis functions.
+The deCasteljau's algorithm recursively iterates over the control points to produces a numerical stable Bezier curve.
 </p>
+
+
+
+
 
 The $B_{i,n}$ are called Bernstein polynomials, and they are defined as
 \begin{equation}
