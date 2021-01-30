@@ -164,6 +164,8 @@ $$
 = (1-u)^2P_0 + 2u(1-u)P_1 + u^2P_2
 $$
 
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/image-alignment-580x300.jpg){: .align-center}
+
 which is the same result as before. The implementation of the deCastelajau algorithm is straightforward.
 
 
