@@ -136,6 +136,21 @@ ensures the interpolation between the control points.
 
 ## Example
 
+For this example, let's create a quadratic Bezier curve. A quadratic Bezier curve represents the case for $n = 2$ in definition above. Consequently, the Bernstein
+polynomials take the following form
+
+$$
+B_{0,1}(u) = (1-u)B_{0,0}(u) + uB_{-1,0}(u) = 1 - u \\
+B_{0,1}(u) = (1-u)B_{1,0}(u) + uB_{0,0}(u) = u \\
+B_{0,1}(u) = (1-u)B_{0,1}(u) + uB_{-1,0}(u) = (1 - u)^2 \\
+B_{0,1}(u) = (1-u)B_{0,0}(u) + uB_{-1,0}(u) = (1 - u)u + u(1-u) = 2u(1 - u) \\
+B_{0,1}(u) = (1-u)B_{2,1}(u) + uB_{1,1}(u) = 1 - u
+$$
+
+This a direct result of using the recursive property of the basis functions. In addition, from the figure below shows the set of recursive dependency for the of 
+$B_{1,2}$
+
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/bernstein-tree.PNG){: .align-center}
 
 Let's see the case for $n = 2$, the Bernstein basis functions takes the following form
 $$B_{0,2} = (1-u)^2 \quad B_{1,2} = 2u(1-u) \quad B_{2,2}=u^2$$
@@ -149,13 +164,7 @@ $$
 
 The Bezier basis function definition in (2) involve the computation of factorials that we will avoid. In the other hand, we can exploit the basis function recursive property, and introduce a computational friendly implementation of Bezier curve. This is the fundamental concept of the deCastelajau algorithm. Defining  $\textbf{B}_{i,n} \equiv 0$ if $i < 0$ or $i > n$. Based on this definition, and using the example above, we can illustrate the recursive mechanism
 
-$$
-B_{0,1}(u) = (1-u)B_{0,0}(u) + uB_{-1,0}(u) = 1 - u \\
-B_{0,1}(u) = (1-u)B_{1,0}(u) + uB_{0,0}(u) = u \\
-B_{0,1}(u) = (1-u)B_{0,1}(u) + uB_{-1,0}(u) = (1 - u)^2 \\
-B_{0,1}(u) = (1-u)B_{0,0}(u) + uB_{-1,0}(u) = (1 - u)u + u(1-u) = 2u(1 - u) \\
-B_{0,1}(u) = (1-u)B_{2,1}(u) + uB_{1,1}(u) = 1 - u
-$$
+
 
 then, 
 
@@ -164,7 +173,7 @@ $$
 = (1-u)^2P_0 + 2u(1-u)P_1 + u^2P_2
 $$
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/bernstein-tree.PNG){: .align-center}
+
 
 which is the same result as before. The implementation of the deCastelajau algorithm is straightforward.
 
