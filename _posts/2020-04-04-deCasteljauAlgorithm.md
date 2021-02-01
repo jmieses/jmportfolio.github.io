@@ -136,7 +136,7 @@ ensures the interpolation between the control points.
 
 ## Example
 
-For this example, let's create a quadratic Bezier curve. A quadratic Bezier curve represents the case for $n = 2$ in definition above. Using the property
+For this example, let's create a quadratic Bezier curve. A quadratic Bezier curve represents the case for $n = 2$ in the definition above. Using the property
 $B_{0,n} = B_{n,n} = 1$ the Bernsteinpolynomials take the following form
 
 
