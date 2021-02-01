@@ -129,7 +129,7 @@ B_{i,n}(u) = \frac{n!}{i!(n-i)!}u^i(1-u)^{n-i} \qquad 0 \leq u \leq 1.
 \end{equation}
 
 However, the deCasteljau's algorithm avoids the direct calculation of factorials. Instead, it exploits the Bernstein polynomials property where
-$B_{0,n}(0) = B_{i,n}(1) = 1$, and it produces a point on the curve by recursion. In addition, the partition of unity property $ \sum^n_{i=0}B_{i,n}(u) = 1 
+$B_{0,n}(0) = B_{n,n}(1) = 1$, and it produces a point on the curve by recursion. In addition, the partition of unity property $ \sum^n_{i=0}B_{i,n}(u) = 1 
 \quad \forall u \in [0,1]$ 
 ensures the interpolation between the control points.
 
@@ -137,7 +137,7 @@ ensures the interpolation between the control points.
 ## Example
 
 For this example, let's create a quadratic Bezier curve. A quadratic Bezier curve represents the case for $n = 2$ in the definition above. Using the property
-$B_{0,n} = B_{n,n} = 1$ the Bernstein polynomials take the following form
+$B_{0,n}(0) = B_{n,n}(1) = 1$ the Bernstein polynomials take the following form
 
 
 $$
