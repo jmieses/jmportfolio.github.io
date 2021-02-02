@@ -178,45 +178,75 @@ creation.
 
 We would like to display a 2D curve, therefore, having a struct with an x and y coordinates will come very handy. By defining a struct Point with two coordinates we can create a vector of points, which can then be used for the algorithm. Thus, it just makes sense to create a vector that holds a collection of 2D points for the control points. In addition, we will use the same data structure to copy the control points in a temporary vector of points, which will produce the points for the Bezier curve. 
 
+
 ```c++
-typedef struct Point {
-    double x, y;
+#ifndef CURVE_H
+#define CURVE_H
+
+#include <vector>
+struct Point {
+    float x;
+    float y;
 };
 
-typedef struct Curve {
-    std::vector<Point> C;
-    Curve(size_t size) {
-        C.resize(size);
-    }
-};
+class Curve{
+public:
+    Curve() = default;
+    const std::vector<float>& deCasteljau(std::vector<float>& ctrl_pts);
+    const std::vector<float>& Bspline(std::vector<float>& ctrl_pts);
+    const std::vector<float>& NURBS(std::vector<float>& ctrl_pts);
+    void NURBS_Init();
+    inline std::vector<float>& Get_Weights() { return m_weight_vector; }
+private:
+    void deCasteljau_Subroutine(float u);
+    void Vector_To_Points(std::vector<float>& ctrl_pts);
+    std::vector<float> m_curve;
+    std::vector<Point> m_ctrl_pts;
+    float m_res = 0.001f;
 
-std::vector<Point> control_points =
-{
-    { 0.0f / 10.0f, -1.1f / 10.0f},
-    { -2.0f / 10.0f, 8.3f / 10.0f},
-    { 0.5f / 10.0f, 6.5f / 10.0f},
-    { 5.1f / 10.0f, 4.7f / 10.0f},
-    { 3.3f / 10.0f, 3.1f / 10.0f},
-    { 1.4f / 10.0f, 7.5f / 10.0f},
-    { 2.1f / 10.0f, 0.0f / 10.0f},
+    void Gen_Knot_Vector();
+    int Find_Span(float&);
+    void Basis_Funcs(const int&, const float&);
+    void Bspline_Subroutine();
+    int degree = 3;
+    std::vector<float> m_bspline_basis_funcs;
+    std::vector<float> m_knot_vector;
+    std::vector<float> m_weight_vector;
+    
+    inline void Scale_Points();
+    const std::vector<float>& NURBS_Subroutine();
+    float m_weight_sum;
+    float m_bspline_basis_funcs_sum;
 };
-
-Curve curve(control_points.size());
+#endif
 ```
 
-```c++
-void deCasteljau(double u) {
 
-    std::vector<Point> temp_control_points(control_points);
-    
-    for (unsigned int i = 1; i < control_points.size(); i++) {
-        for (unsigned int j = 0; j < control_points.size() - i; j++) {
-            temp_control_points[j].x = (1.0 - u) * temp_control_points[j].x + u * temp_control_points[j + 1].x;
-            temp_control_points[j].y = (1.0 - u) * temp_control_points[j].y + u * temp_control_points[j + 1].y;
+```c++
+const std::vector<float>& Curve::deCasteljau(std::vector<float>& ctrl_pts){
+    Vector_To_Points(ctrl_pts);
+
+    if(!m_curve.empty()) m_curve.clear();
+
+    for(float u = 0.0f; u < 1.0f; u += m_res){
+        deCasteljau_Subroutine(u);
+    }
+
+    return m_curve;
+}
+
+void Curve::deCasteljau_Subroutine(float u){
+    std::vector<Point> tmp_ctrl_pts(m_ctrl_pts);
+    for(unsigned int i = 1; i < tmp_ctrl_pts.size(); i++){
+        for(unsigned int j = 0; j < tmp_ctrl_pts.size() - i; j++){
+            tmp_ctrl_pts[j].x = ((float)1. - u) * tmp_ctrl_pts[j].x + u * (tmp_ctrl_pts[j + 1].x);
+            tmp_ctrl_pts[j].y = ((float)1. - u) * tmp_ctrl_pts[j].y + u * (tmp_ctrl_pts[j + 1].y);
         }
-    }  
-    curve.C[0].x = temp_control_points[0].x;
-    curve.C[0].y = temp_control_points[0].y;
+    }
+
+    m_curve.emplace_back(tmp_ctrl_pts[0].x);
+    m_curve.emplace_back(tmp_ctrl_pts[0].y);
+    m_curve.emplace_back(0.0f);             // the curve lives in the xy plane (x, y, z = 0)
 }
 ```
 
