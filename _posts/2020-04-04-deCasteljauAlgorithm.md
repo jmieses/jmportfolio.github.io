@@ -198,8 +198,6 @@ private:
     void Vector_To_Points(std::vector<float>& ctrl_pts);
     std::vector<float> m_curve;
     std::vector<Point> m_ctrl_pts;
-    
-
 };
 #endif
 ```
@@ -222,10 +220,10 @@ const std::vector<float>& Curve::deCasteljau(std::vector<float>& ctrl_pts){
 
 void Curve::deCasteljau_Subroutine(float u){
     std::vector<Point> tmp_ctrl_pts(m_ctrl_pts);
-    for(unsigned int i = 1; i < tmp_ctrl_pts.size(); i++){
-        for(unsigned int j = 0; j < tmp_ctrl_pts.size() - i; j++){
-            tmp_ctrl_pts[j].x = ((float)1. - u) * tmp_ctrl_pts[j].x + u * (tmp_ctrl_pts[j + 1].x);
-            tmp_ctrl_pts[j].y = ((float)1. - u) * tmp_ctrl_pts[j].y + u * (tmp_ctrl_pts[j + 1].y);
+    for(int i = 1; i < tmp_ctrl_pts.size(); i++){
+        for(int j = 0; j < tmp_ctrl_pts.size() - i; j++){
+            tmp_ctrl_pts[j].x = (1.0f - u) * tmp_ctrl_pts[j].x + u * (tmp_ctrl_pts[j + 1].x);
+            tmp_ctrl_pts[j].y = (1.0f - u) * tmp_ctrl_pts[j].y + u * (tmp_ctrl_pts[j + 1].y);
         }
     }
 
