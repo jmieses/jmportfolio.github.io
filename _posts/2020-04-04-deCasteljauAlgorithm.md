@@ -114,7 +114,7 @@ is a parametric polynomial curve that uses polynomials for its coordinates funct
 $$\textbf{C}(u) = \sum^n_{i=0}B_{i,n}(u)\textbf{P}_{i} \qquad  0 \leq u \leq 1. $$
 
 
-The set $\\{\textbf{P}\\}$ are called control points, the $B_{i,n}(u)$ are Bernstein polynomials.
+The set $\\{\textbf{P}\\}$ are called control points, and the $B_{i,n}(u)$ are Bernstein polynomials.
 The control points are the geometric coefficients of the Bezier curve and the Bernstein polynomials are basis functions. Therefore, 
 the curve $\textbf{C(u)}$ can be expressed as a linear combination of the control points and Bernstein polynomials. Consequently, 
 the deCasteljau's algorithm recursively iterates over the control points to produce a numerical stable Bezier curve.
