@@ -167,9 +167,12 @@ $$
 
 ### OpenGL Setup
 
-To create a window I used [GLFW](https://www.glfw.org "GLFW's Homepage") library. As a baseline, I used this [example](https://www.glfw.org/documentation.html) in the site. It provides a code snippet to create a window, which is enough to test and display our Bezier curve.
 
-Consequently, for the drawing I used the legacy OpenGL with glBegin(). For the purpose of this quick test/drawing it would be just fine.
+For drawing the curve I will be using modern OpenGL; the setup will use vertex and fragment shaders. I followed this [tutorial](https://learnopengl.com/) for the basic setup. 
+In addition, the data will be computed with the CPU, then with pass this data to OpenGL drawing functions for the GPU to draw it. 
+
+For the implementation, the algorithm will be encapsulated in a class. A curve class will contain the algorithm, so we could reuse it and implement other algorithms for curve
+creation.
 
 ### deCasteljau Algorithm
 
