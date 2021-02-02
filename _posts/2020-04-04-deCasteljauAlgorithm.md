@@ -233,6 +233,7 @@ void Curve::deCasteljau_Subroutine(float u){
 }
 ```
 
+The code for the project can be found [here](https://github.com/jmieses/opengl_2D_gui).
 
 ## References
 [1][https://en.wikipedia.org/wiki/B%C3%A9zier_curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
