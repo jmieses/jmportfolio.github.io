@@ -198,7 +198,7 @@ private:
     void Vector_To_Points(std::vector<float>& ctrl_pts);
     std::vector<float> m_curve;
     std::vector<Point> m_ctrl_pts;
-    constexpr float m_res = 0.001f;
+    
 
 };
 #endif
@@ -206,6 +206,8 @@ private:
 
 
 ```c++
+static const float m_res = 0.001f;
+
 const std::vector<float>& Curve::deCasteljau(std::vector<float>& ctrl_pts){
     Vector_To_Points(ctrl_pts);
 
