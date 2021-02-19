@@ -4,7 +4,8 @@ date: 2020-04-04
 toc: true
 excerpt: "OpenGL, deCasteljau, Algorithm"
 mathjax: true
-classes: wide	
+classes: wide
+youtubeId: vP-Ym-iZiiU	
 ---
 
 
@@ -234,6 +235,8 @@ void Curve::deCasteljau_Subroutine(float u){
 ```
 
 The code for the project can be found [here](https://github.com/jmieses/opengl_2D_gui).
+
+{% include youtubePlayer.html id=page.youtubeId %}
 
 ## References
 [1][https://en.wikipedia.org/wiki/B%C3%A9zier_curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
