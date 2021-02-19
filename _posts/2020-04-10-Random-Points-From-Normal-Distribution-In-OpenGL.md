@@ -19,14 +19,13 @@ We can get a set of pseudorandom points using the template class std::normal_dis
 
 ## Implementation
 
-At first, I decided to use the follwing sigmoid function: 
-
-$$f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$$
-
-For sigmoid function, we will be using 
+At first, I decided to use the follwing sigmoid function $f(x) =  \frac{e^{2x} - 1}{e^{2x} + 1}$.
+But, I wanted to avoid the use of exponents. Instead, I used the following sigmoid function for the
+actual implementation 
 
 $$ f(x) = \frac{x}{1+ \lvert x \rvert}$$
 
+This allow for an easy and fast calculation along with the mapping in the necessary range. Thus, 
 this sigmoid function does the mapping $f(x) : (-\infty, \infty) \to (-1, 1)$.
 
 ```c++
