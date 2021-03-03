@@ -1,5 +1,5 @@
 ---
-title: "deCasteljau Algorithm"
+title: "Bezier Curve with deCasteljau Algorithm"
 date: 2020-04-04
 toc: true
 excerpt: "OpenGL, deCasteljau, Algorithm"
