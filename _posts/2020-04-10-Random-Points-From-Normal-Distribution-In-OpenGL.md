@@ -1,5 +1,5 @@
 ---
-title: "Random Points From Normal Distribution in OpenGL"
+title: "Displaying Random Points from Normal Distribution with OpenGL"
 date: 2020-04-24
 toc: true
 excerpt: "OpenGL, Randomness, Normal Distribution"
